@@ -3,9 +3,9 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-	Triangle a = new Triangle(-2,1,3,3,1,0);
-	a.getPerimeter();
-	a.getArea();
+	Triangle a = new Triangle(3,5,4);
+	System.out.println(a.calculatePerimeter());
+	System.out.println(a.calculateArea());
 
     }
 }
