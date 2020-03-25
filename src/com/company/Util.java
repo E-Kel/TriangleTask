@@ -1,15 +1,8 @@
-//compackage com.company;
-//
-//public class Util {
-//
-//    public Util(Dot a, Dot b){
-//        x1 = a.getX();
-//        x2 = b.getX();
-//        y1 = a.getY();
-//        y2 = b.getY();
-//
-//
-//    }
-//
-//
-//}
+package com.company;
+
+public class Util {
+    public static double claculateDistanceBTWTwoPoints(double x1, double y1, double x2, double y2){
+        return Math.sqrt(Math.abs(Math.pow(x1-x2,2)+Math.pow(y1-y2,2)));
+    }
+
+}
