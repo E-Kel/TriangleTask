@@ -4,6 +4,9 @@ public class Dot {
     private double x;
     private double y;
 
+    public Dot(double x1, double y1) {
+    }
+
     public static double claculateDistanceBTWTwoPoints(Dot a, Dot b){
 
         double x1 = a.getX();
@@ -11,7 +14,7 @@ public class Dot {
         double y1 = a.getY();
         double y2 = b.getY();
 
-        double distance = Math.abs(Math.pow(x1-x2,2)+Math.pow(y1-y2,2));
+        double distance = Math.sqrt(Math.abs(Math.pow(x1-x2,2)+Math.pow(y1-y2,2)));
 
         return distance;
     }
