@@ -6,17 +6,79 @@ public class Triangle {
     private double sideBC;
     private double sideAC;
 
+    private double perimeter;
+    private final double area;
+
     public Triangle(double sideAB, double sideBC, double sideAC) {
         this.sideAB = sideAB;
         this.sideBC = sideBC;
         this.sideAC = sideAC;
+        this.perimeter = calculatePerimeter();
+        this.area = calculateArea();
+
+        TypesOfTriangles[] types;
     }
 
-    public double calculatePerimeter(){return (sideAB + sideBC + sideAC);}
-    public double calculateArea() {
-        double perimeter = calculatePerimeter();
-        return Math.sqrt((perimeter - sideAB) * (perimeter - sideAC) * (perimeter - sideBC));
+    private double calculatePerimeter() {
+        return (sideAB + sideBC + sideAC);
     }
+
+    private double calculateArea() {
+        double halfPerimeter = perimeter / 2;
+        return Math.sqrt((halfPerimeter - sideAB) * (halfPerimeter - sideAC) * (halfPerimeter - sideBC));
+    }
+
+    private TypesOfTriangles defineTypeOfTriangle() {
+        if (checkRightAngle()) {
+            return TypesOfTriangles.RightAngled;
+        }
+        if (checkEquilateral()) {
+            return TypesOfTriangles.Equilateral;
+        }
+        if (checkIsosceles()) {
+            return TypesOfTriangles.Isosceles;
+        } else
+            return TypesOfTriangles.Scalene;
+
+
+    }
+
+    private boolean checkIsosceles() {
+        return false;
+    }
+
+
+    private boolean checkEquilateral() {
+        if (sideAB == sideBC && sideAC == sideBC)
+            return true;
+        else
+            return false;
+    }
+
+    private boolean isItHypo(double side1, double side2, double side3) {
+        boolean _ = (side1 == Math.sqrt(Math.pow(side2, 2) + Math.pow(side3, 2)));
+        return _;
+    }
+
+    private boolean checkRightAngle() {
+        if (
+                isItHypo(sideAB, sideAC, sideBC) ||  //todo DRY
+                        isItHypo(sideBC, sideAC, sideAB) ||
+                        isItHypo(sideBC, sideAC, sideAB)
+        )
+            return true;
+        else
+            return false;
+    }
+
+    public double getPerimeter() {
+        return perimeter;
+    }
+
+    public double getArea() {
+        return area;
+    }
+
 
 }
 
