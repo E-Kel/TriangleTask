@@ -6,10 +6,10 @@ public class Main {
     public static void main(String[] args) {
         ArrayList<Triangle> list;
 
-	Triangle a = new Triangle(3,5,4);
+        Triangle a = new Triangle(3,5,4);
         Triangle b = new Triangle(6,10,8);
 
-	ArrayOfTriangles aa = new ArrayOfTriangles(a,b);
+    	ArrayOfTriangles aa = new ArrayOfTriangles(a,b);
 //	System.out.println(a.getArea());
 //	System.out.println(b.getPerimeter());
 //	System.out.println(b.getArea());
