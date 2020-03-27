@@ -83,6 +83,7 @@ public class Triangle {
     }
 
     public ArrayList<TypesOfTriangles> getTypes() {
+
         for (TypesOfTriangles t: types) {
             System.out.println(t);
 

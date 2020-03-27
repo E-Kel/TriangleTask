@@ -16,9 +16,8 @@ public class ArrayOfTriangles {
     private int countTypes(){
         HashMap types = new HashMap();//Equilateral-1,Isosceles-2,RightAngle-3, Scalene-4
         for (Triangle tr:arrayOfTriangles)
+            tr.getTypes();   //todo make possibility of multiple output
 
-        return 1;
-        return 0;
     }
 
 }
