@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.ArrayList;
+
 //todo: triangle verification
 public class Triangle {
     private double sideAB; //A - 1, B -2, C -3
@@ -7,7 +9,10 @@ public class Triangle {
     private double sideAC;
 
     private double perimeter;
-    private final double area;
+    private double area;
+
+    private ArrayList<TypesOfTriangles> types;
+
 
     public Triangle(double sideAB, double sideBC, double sideAC) {
         this.sideAB = sideAB;
@@ -15,8 +20,6 @@ public class Triangle {
         this.sideAC = sideAC;
         this.perimeter = calculatePerimeter();
         this.area = calculateArea();
-
-        TypesOfTriangles[] types;
     }
 
     private double calculatePerimeter() {
@@ -28,23 +31,23 @@ public class Triangle {
         return Math.sqrt((halfPerimeter - sideAB) * (halfPerimeter - sideAC) * (halfPerimeter - sideBC));
     }
 
-    private TypesOfTriangles defineTypeOfTriangle() {
+    private void defineTypesOfTriangle() {
         if (checkRightAngle()) {
-            return TypesOfTriangles.RightAngled;
+             types.add(TypesOfTriangles.RightAngled);
         }
         if (checkEquilateral()) {
-            return TypesOfTriangles.Equilateral;
+            types.add(TypesOfTriangles.Equilateral);
         }
-        if (checkIsosceles()) {
-            return TypesOfTriangles.Isosceles;
+        else if (checkIsosceles()) {
+            types.add(TypesOfTriangles.Isosceles);
         } else
-            return TypesOfTriangles.Scalene;
-
-
+            types.add(TypesOfTriangles.Scalene);
     }
 
     private boolean checkIsosceles() {
-        return false;
+        if ((sideAB == sideBC) || (sideAB == sideAC) || (sideBC == sideAC)){
+            return true;
+        }else return false;
     }
 
 
@@ -54,22 +57,21 @@ public class Triangle {
         else
             return false;
     }
-
-    private boolean isItHypo(double side1, double side2, double side3) {
-        boolean _ = (side1 == Math.sqrt(Math.pow(side2, 2) + Math.pow(side3, 2)));
-        return _;
-    }
-
     private boolean checkRightAngle() {
         if (
                 isItHypo(sideAB, sideAC, sideBC) ||  //todo DRY
-                        isItHypo(sideBC, sideAC, sideAB) ||
-                        isItHypo(sideBC, sideAC, sideAB)
+                isItHypo(sideBC, sideAC, sideAB) ||
+                isItHypo(sideBC, sideAC, sideAB)
         )
             return true;
         else
             return false;
     }
+    private boolean isItHypo(double side1, double side2, double side3) {
+        boolean _ = (side1 == Math.sqrt(Math.pow(side2, 2) + Math.pow(side3, 2)));
+        return _;
+    }
+
 
     public double getPerimeter() {
         return perimeter;
