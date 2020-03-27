@@ -10,12 +10,13 @@ public class ArrayOfTriangles {
             this.arrayOfTriangles.add(i,args[i]);
         }
     }
-    static void printInfAboutTriangles(ArrayList<Triangle> ar){
+    static void printInfAboutTriangles(ArrayList<Triangle> ar) {
 
     }
-    private int countTypes(){
+
+    private void countTypes() {
         HashMap types = new HashMap();//Equilateral-1,Isosceles-2,RightAngle-3, Scalene-4
-        for (Triangle tr:arrayOfTriangles)
+        for (Triangle tr : arrayOfTriangles)
             tr.getTypes();   //todo make possibility of multiple output
 
     }
