@@ -11,7 +11,7 @@ public class Triangle {
     private double perimeter;
     private double area;
 
-    private ArrayList<TypesOfTriangles> types;
+    private ArrayList<TypesOfTriangles> types= new ArrayList<TypesOfTriangles>();
 
 
     public Triangle(double sideAB, double sideBC, double sideAC) {
@@ -20,6 +20,7 @@ public class Triangle {
         this.sideAC = sideAC;
         this.perimeter = calculatePerimeter();
         this.area = calculateArea();
+        defineTypesOfTriangle();
     }
 
     private double calculatePerimeter() {
@@ -79,6 +80,15 @@ public class Triangle {
 
     public double getArea() {
         return area;
+    }
+
+    public ArrayList<TypesOfTriangles> getTypes() {
+        for (TypesOfTriangles t:
+             types) {
+            System.out.println(t);
+
+        }
+        return types;
     }
 
 

@@ -1,7 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
-
+//todo triangle validation;
 public class Main {
     public static void main(String[] args) {
         ArrayList<Triangle> list;
@@ -9,7 +9,8 @@ public class Main {
         Triangle a = new Triangle(3,5,4);
         Triangle b = new Triangle(6,10,8);
 
-    	ArrayOfTriangles aa = new ArrayOfTriangles(a,b);
+    	ArrayOfTriangles aa = new ArrayOfTriangles( a,b);
+    	a.getTypes();
 //	System.out.println(a.getArea());
 //	System.out.println(b.getPerimeter());
 //	System.out.println(b.getArea());
