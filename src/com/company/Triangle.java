@@ -36,7 +36,7 @@ public class Triangle {
         if (checkRightAngle()) {
              types.add(TypesOfTriangles.RightAngled);
         }
-        if (checkEquilateral()) {
+        else if (checkEquilateral()) {
             types.add(TypesOfTriangles.Equilateral);
         }
         else if (checkIsosceles()) {
@@ -83,8 +83,7 @@ public class Triangle {
     }
 
     public ArrayList<TypesOfTriangles> getTypes() {
-        for (TypesOfTriangles t:
-             types) {
+        for (TypesOfTriangles t: types) {
             System.out.println(t);
 
         }
