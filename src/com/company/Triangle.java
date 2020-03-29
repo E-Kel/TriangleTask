@@ -51,7 +51,6 @@ public class Triangle {
         }else return false;
     }
 
-
     private boolean checkEquilateral() {
         if (sideAB == sideBC && sideAC == sideBC)
             return true;
