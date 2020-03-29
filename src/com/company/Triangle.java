@@ -10,7 +10,7 @@ public class Triangle {
     private double perimeter;
     private double area;
 
-    private ArrayList<TypesOfTriangles> types = new ArrayList<>();
+    private ArrayList<TypesOfTriangles> types;
 
 
     public Triangle(double sideAB, double sideBC, double sideAC) {
@@ -22,12 +22,15 @@ public class Triangle {
             this.perimeter = calculatePerimeter();
             this.area = calculateArea();
             defineTypesOfTriangle();
-        } else System.out.println("invalid triangle with sides" + " AB:" + sideAB + " BC:" + sideBC + " AC:" + sideAC);
+        } else {
+            types = new ArrayList<>();
+            types.add(TypesOfTriangles.InvalidTriangle);
+            System.out.println("invalid triangle with sides" + " AB:" + sideAB + " BC:" + sideBC + " AC:" + sideAC);
+        }
     }
 
     private boolean verifyTriangle() {
-        boolean result = (sideBC + sideAB > sideAC && sideAB + sideAC > sideBC && sideBC + sideAC > sideAB);
-        return result;
+        return (sideBC + sideAB > sideAC && sideAB + sideAC > sideBC && sideBC + sideAC > sideAB);
 
     }
 
@@ -41,6 +44,7 @@ public class Triangle {
     }
 
     private void defineTypesOfTriangle() {
+        types = new ArrayList<>();
         checkIsosceles();
         checkEquilateral();
         checkRightAngle();
@@ -74,8 +78,8 @@ public class Triangle {
     }
 
     private boolean isItHypo(double side1, double side2, double side3) {
-        boolean isItHypo = (side1 == Math.sqrt(Math.pow(side2, 2) + Math.pow(side3, 2)));
-        return isItHypo;
+        return (side1 == Math.sqrt(Math.pow(side2, 2) + Math.pow(side3, 2)));
+
     }
 
     public double getPerimeter() {
@@ -87,10 +91,11 @@ public class Triangle {
     }
 
     public ArrayList<TypesOfTriangles> getTypes() {
-
-        for (TypesOfTriangles t : types) {
-            System.out.println(t);
+        for (TypesOfTriangles type:
+             types) {
+            System.out.printf(type.toString()+ ", ");
         }
+        System.out.println();
         return types;
     }
 }

@@ -4,5 +4,6 @@ public enum TypesOfTriangles {
     Equilateral,
     Isosceles, //two equal angles
     RightAngled,
-    Scalene
+    Scalene,
+    InvalidTriangle
 }
