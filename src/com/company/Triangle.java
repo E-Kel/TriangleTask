@@ -93,9 +93,9 @@ public class Triangle {
     public ArrayList<TypesOfTriangles> getTypes() {
         for (TypesOfTriangles type:
              types) {
-            System.out.printf(type.toString()+ ", ");
+//            System.out.printf(type.toString()+ ", ");
         }
-        System.out.println();
+//        System.out.println();
         return types;
     }
 }

@@ -12,13 +12,18 @@ public class Main {
         Triangle c = new Triangle(3 , 6, 4);
         Triangle e = new Triangle(22.63, 16, 16);
 
+        ArrayOfTriangles n = new ArrayOfTriangles(a,v,b);
+        n.TriangleAnalysis(d);
+        n.TriangleAnalysis(b);
+        n.TriangleAnalysis(c);
+
         //	ArrayOfTriangles aa = new ArrayOfTriangles( a,b);
-        v.getTypes();
-        a.getTypes();
-        b.getTypes();
-        d.getTypes();
-        c.getTypes();
-        e.getTypes();
+//        v.getTypes();
+//        a.getTypes();
+//        b.getTypes();
+//        d.getTypes();
+//        c.getTypes();
+//        e.getTypes();
         //	Triangle c = new Triangle(15,9,12);
         //	Triangle d = new Triangle(3,5,4);
 
