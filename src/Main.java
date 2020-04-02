@@ -1,4 +1,5 @@
-package com.company;
+import triangle.ArrayOfTriangles;
+import triangle.Triangle;
 
 import java.util.ArrayList;
 public class Main {

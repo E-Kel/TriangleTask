@@ -1,4 +1,4 @@
-package com.company;
+package triangle;
 
 import java.util.ArrayList;
 
@@ -91,12 +91,6 @@ public class Triangle {
     }
 
     public ArrayList<TypesOfTriangles> getTypes() {
-        for (TypesOfTriangles type:
-             types) {
-//            System.out.printf(type.toString()+ ", ");
-        }
-//        System.out.println();
         return types;
     }
 }
-

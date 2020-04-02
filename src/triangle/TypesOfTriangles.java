@@ -1,9 +1,9 @@
-package com.company;
+package triangle;
 
 public enum TypesOfTriangles {
     Equilateral,
     InvalidTriangle,
-    Isosceles, //two equal angles
+    Isosceles, //two equal angles and sides
     RightAngled,
     Scalene
 
